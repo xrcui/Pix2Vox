@@ -53,6 +53,7 @@ def test_net(cfg,
         ])
 
         dataset_loader = utils.data_loaders.DATASET_LOADER_MAPPING[cfg.DATASET.TEST_DATASET](cfg)
+        # dataset_loader.dataset_taxonomy = dataset_loader.dataset_taxonomy[5:7]
         test_data_loader = torch.utils.data.DataLoader(dataset=dataset_loader.get_dataset(
             utils.data_loaders.DatasetType.TEST, cfg.CONST.N_VIEWS_RENDERING, test_transforms),
                                                        batch_size=1,
